@@ -1,9 +1,11 @@
 
 import React, {  useEffect, useState } from 'react'
+import {Container, Row} from 'reactstrap';
 import styled from 'styled-components';
 import SearchBox from './components/SearchBox'
 import api from './services/api';
-import WeatherCard from './components/WeatherCard'
+import WeatherCard from './components/WeatherCard';
+import HeaderContent from './components/Header'
 
 function App() {
   const [weather, setWeather] = useState({});
@@ -17,25 +19,27 @@ function App() {
       }).catch((error) => {
         console.log(error);
       }).finally(() => {
-          setLoading(false)
+          setLoading(false);
       })
     }
   }, [weather])
 
   const Weather = loading || Object.keys(weather).length === 0 ? (<h3>Carregando...</h3> ) : (<WeatherCard weather ={weather} />)
 
-  return (
-    <Container>
-        <SearchBox
-          setWeather = {setWeather}
-          setLoading = {setLoading}
-        />
-        {Weather}
-    </Container>
-  );
+    return (
+      <Container>
+        <Row>
+            <SearchBox
+              setWeather = {setWeather}
+              setLoading = {setLoading}
+            />
+          </Row>
+          <Row xs="3">
+            {Weather}
+          </Row>
+
+      </Container>
+    );
 }
 
-const Container = styled.div`
-  background:red;
-`
 export default App;
