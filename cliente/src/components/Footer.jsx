@@ -16,9 +16,17 @@ const Footer = (() => {
             <FooterSection>
                 <Container>
                     <Swiper
-                        spaceBetween={0}
-                        slidesPerView={4}
-                        setWrapperSize={true}
+                        spaceBetween={20}
+                        slidesPerView={3}
+                        breakpoints={
+                            {
+                                768: {
+                                    width: 768,
+                                    slidesPerView: 4,
+                                    centeredSlides : false,
+                                  },
+                            }
+                        }
                     >
                         <SwiperSlide>
                             <FooterSlide src={KontulariLogo}/>

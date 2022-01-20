@@ -39,7 +39,7 @@ function App() {
                 setLoading = {setLoading}
               />
             </Row>
-            <Row xs="3">
+            <Row>
               {Weather}
             </Row>
 
