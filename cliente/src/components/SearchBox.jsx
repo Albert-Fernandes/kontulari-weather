@@ -29,10 +29,16 @@ const SearchBox = (props) => {
     return (
             <ReactSearchAutocomplete 
             items={location} 
-            onSearch={handleOnSearch} 
-            onSelect={handleOnSelect} 
+            onSearch={handleOnSearch}
+            onSelect={handleOnSelect}
             autofocus 
-            placeholder="Digite a cidade desejada" />
+            placeholder="Digite a cidade desejada"
+            styling = {
+                {
+                    marginBottom: "30px",
+                }
+            }
+             />
         );
 }
 

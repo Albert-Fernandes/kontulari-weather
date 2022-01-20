@@ -25,6 +25,7 @@ const WeatherCard = (props) => {
       icon = rain;
     }
       return (
+        <ContainerCard>
             <Toast>
               <CardBody>
                 <WeatherIcon src={icon} />
@@ -33,7 +34,9 @@ const WeatherCard = (props) => {
                 <CardSubtitle>Mínima : {weather.consolidated_weather[0].min_temp.toFixed(1)} ºC</CardSubtitle>
                 <CardSubtitle>Máxima : {weather.consolidated_weather[0].max_temp.toFixed(1)} ºC</CardSubtitle>
               </CardBody>
-          </Toast>);
+          </Toast>
+        </ContainerCard>
+          );
 }
 
 
@@ -41,6 +44,11 @@ const CitieTitle = styled.h2`
   color: #16303d;
   text-align:center;
   font-weight:700;
+  margin:20px 0;
+`;
+
+const ContainerCard = styled.div`
+  margin: 50px 0 100px 0 !important;
 `;
 
 const WeatherIcon = styled.img`
@@ -53,5 +61,7 @@ const CardSubtitle =styled.span`
   display:block;
   font-size:18px;
   color:rgb(51, 51, 51);
+  margin-bottom:5px;
+  text-align:center;
 `
 export default WeatherCard;

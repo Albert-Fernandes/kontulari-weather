@@ -1,4 +1,4 @@
-const cities = [
+const data = [
 {name : "San Francisco", id: 1},
 {name : "Hamburg", id: 2},
 {name : "New Delhi", id: 3},
@@ -178,4 +178,4 @@ const cities = [
 {name : "Salvador", id: 177},
 ];
 
-export default cities;
+export default data;

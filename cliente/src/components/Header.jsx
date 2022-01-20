@@ -1,25 +1,41 @@
 import styled from 'styled-components';
-import {Nav, NavItem} from 'reactstrap';
-import logo from '../assets/logo.png'
+import {Nav, Container} from 'reactstrap';
+import logo from '../assets/sun-clouded.png'
 
-function Header() {
+const Header = () => {
     return (
         <HeaderMain>
-            <Nav>
-                <NavItem>
-                    <HeaderLogo src={logo}/>
-                </NavItem>
-            </Nav>
+            <Container>
+                <Nav>
+                    <NavLogo>
+                        <HeaderLogo src={logo}/>
+                        <HeaderName>Kontulari Weather</HeaderName>
+                    </NavLogo>
+                </Nav>
+            </Container>
         </HeaderMain>
     );
 }
 
 const HeaderMain = styled.header`
   background-color:#16303d;
-  padding:0 20px;
+  padding:20px 0;
+  margin-bottom:40px;
+  `;
+
+const NavLogo = styled.div`
+    display:flex;
+    align-items:center;
+`;
+const HeaderLogo = styled.img`
+    margin-right:10px;
 `;
 
-const HeaderLogo = styled.img`
-`;
+const HeaderName = styled.h2`
+    color:#fff;
+    font-weght:700;
+    font-size:26px;
+`
+
 
 export default Header;

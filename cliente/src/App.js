@@ -6,6 +6,7 @@ import SearchBox from './components/SearchBox'
 import api from './services/api';
 import WeatherCard from './components/WeatherCard';
 import HeaderContent from './components/Header'
+import Footer   from './components/Footer';
 
 function App() {
   const [weather, setWeather] = useState({});
@@ -13,7 +14,7 @@ function App() {
 
   /*Effect on card Change*/
   useEffect(() => {
-    if(Object.keys({weather}).length === 0){
+    if(Object.keys(weather).length === 0){
       api.get('/?location=Salvador').then((weather) => {
         setWeather(weather.data);
       }).catch((error) => {
@@ -27,19 +28,30 @@ function App() {
   const Weather = loading || Object.keys(weather).length === 0 ? (<h3>Carregando...</h3> ) : (<WeatherCard weather ={weather} />)
 
     return (
-      <Container>
-        <Row>
-            <SearchBox
-              setWeather = {setWeather}
-              setLoading = {setLoading}
-            />
-          </Row>
-          <Row xs="3">
-            {Weather}
-          </Row>
+      <Main>
+        <HeaderContent>
+          
+        </HeaderContent>
+        <Container>
+          <Row>
+              <SearchBox
+                setWeather = {setWeather}
+                setLoading = {setLoading}
+              />
+            </Row>
+            <Row xs="3">
+              {Weather}
+            </Row>
 
-      </Container>
+        </Container>
+
+        <Footer />
+      </Main>
     );
 }
+
+const Main = styled.section`
+  background-color:#fff;
+`;
 
 export default App;
