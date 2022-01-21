@@ -39,12 +39,8 @@ function App() {
                 setLoading = {setLoading}
               />
             </Row>
-            <Row>
-              {Weather}
-            </Row>
-
+            {Weather}
         </Container>
-
         <Footer />
       </Main>
     );

@@ -30,7 +30,8 @@ const SearchBox = (props) => {
             <div style={
                 {
                     width:"100%",
-
+                    zIndex:"9999",
+                    marginBottom:"40px",
                 }
             }>
                 <ReactSearchAutocomplete 
