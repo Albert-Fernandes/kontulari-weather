@@ -1,8 +1,11 @@
 import styled from 'styled-components';
 import {Container} from 'reactstrap';
 import { Swiper, SwiperSlide } from 'swiper/react';
+import {Pagination} from 'swiper';
+import 'swiper/css/pagination';
 // Import Swiper styles
 import 'swiper/css/bundle';
+import '../assets/css/main.css'
 import reacLogo from '../assets/react.png'
 import KontulariLogo from '../assets/kontular-2i.png'
 import bootsLogo from '../assets/bootstrap.png'
@@ -18,12 +21,15 @@ const Footer = (() => {
                     <Swiper
                         spaceBetween={20}
                         slidesPerView={3}
+                        modules={[Pagination]}
+                        pagination={{ clickable: true }}
                         breakpoints={
                             {
                                 768: {
                                     width: 768,
                                     slidesPerView: 4,
                                     centeredSlides : false,
+                                    pagination:false,
                                   },
                             }
                         }
@@ -56,7 +62,9 @@ const Footer = (() => {
     );
 });
 
-const MainFooter = styled.section``;
+const MainFooter = styled.section`
+    transform: translateY(100%);
+`;
 
 const FooterSection = styled.section`
     background-color:#16303d;

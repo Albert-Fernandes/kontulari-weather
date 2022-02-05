@@ -7,6 +7,8 @@ import api from './services/api';
 import WeatherCard from './components/WeatherCard';
 import HeaderContent from './components/Header'
 import Footer   from './components/Footer';
+import  loadingGif from './assets/loading.gif'
+import './assets/css/main.css'
 
 function App() {
   const [weather, setWeather] = useState({});
@@ -25,13 +27,11 @@ function App() {
     }
   }, [weather])
 
-  const Weather = loading || Object.keys(weather).length === 0 ? (<h3>Carregando...</h3> ) : (<WeatherCard weather ={weather} />)
+  const Weather = loading || Object.keys(weather).length === 0 ? (<img class="loadingGiff" src={loadingGif} />) : (<WeatherCard weather ={weather} />)
 
     return (
       <Main>
-        <HeaderContent>
-          
-        </HeaderContent>
+        <HeaderContent></HeaderContent>
         <Container>
           <Row>
               <SearchBox

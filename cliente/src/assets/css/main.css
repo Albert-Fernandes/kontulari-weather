@@ -1,0 +1,32 @@
+/*Content*/
+.loadingGiff{
+    display: block;
+    margin:  0 auto;
+    margin-bottom: 20px;
+}
+
+/*Footer*/
+.swiper{
+    padding-bottom: 50px;
+}
+.swiper-wrapper{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.swiper-slide{
+    display: flex;
+    justify-content: center;
+}
+.swiper-pagination{
+    bottom: 0 !important;
+}
+.swiper-pagination-bullet-active{
+    background: #fff !important;
+}
+
+@media only screen and (min-width:768px){
+    .swiper{
+        padding-bottom: 0;
+    }
+}

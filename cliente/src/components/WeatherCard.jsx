@@ -16,28 +16,20 @@ const WeatherCard = (props) => {
     var weatherName = "";
     function SetDayName(datecode){
         var dateDay = "";
-        switch(datecode){
-          case 0:
+        if(datecode === 0 || datecode === 7){
             dateDay = "Domingo";
-            break;
-          case 1:
-            dateDay = "Segunda";
-            break;
-          case 2:
-              dateDay = "Terça";
-              break;
-          case 3:
-            dateDay = "Quarta";
-            break;
-          case 4:
-            dateDay = "Quinta";
-            break;
-          case 5:
-            dateDay = "Sexta";
-            break;
-          case 6:
-            dateDay = "Sábado";
-            break;
+        }else if (datecode === 1 || datecode === 8 ){
+          dateDay = "Segunda";
+        }else if(datecode === 2){
+          dateDay = "Terça";
+        }else if(datecode === 3){
+          dateDay = "Quarta";
+        }else if (datecode === 4){
+          dateDay = "Quinta";
+        }else if (datecode === 5){
+          dateDay = "Sexta";
+        }else if(datecode === 6){
+          dateDay = "Sábado";
         }
         return dateDay;
     }
@@ -92,7 +84,7 @@ const WeatherCard = (props) => {
                 <CardBody>
                   <WeatherIcon src={icon} />
                   <CitieTitle tag="h2">{weather.title}</CitieTitle>
-                  <CardSubtitle>Previsão para : {SetDayName(date.getDay(weather.consolidated_weather[2].applicable_date ) + 2)}</CardSubtitle>
+                  <CardSubtitle>Previsão para : {SetDayName(date.getDay(weather.consolidated_weather[2].applicable_date) + 2)}</CardSubtitle>
                   <ForecastName>{weatherName}</ForecastName>
                   <CardSubtitle>Temperatura : {weather.consolidated_weather[2].the_temp.toFixed(1)} ºC</CardSubtitle>
                   <CardSubtitle>Mínima : {weather.consolidated_weather[2].min_temp.toFixed(1)} ºC</CardSubtitle>
@@ -113,7 +105,7 @@ const CitieTitle = styled.h2`
 `;
 
 const ContainerCard = styled.div`
-  margin-bottom: 50px  !important;
+  margin-bottom: 20px  !important;
   position: relative;
   z-index: 1;
 `;

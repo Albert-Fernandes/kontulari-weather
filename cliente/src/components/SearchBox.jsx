@@ -38,7 +38,7 @@ const SearchBox = (props) => {
                 items={location} 
                 onSearch={handleOnSearch}
                 onSelect={handleOnSelect}
-                autofocus 
+                onFocus={handleOnSearch}
                 placeholder="Digite a cidade desejada"
                 styling = {
                     {
